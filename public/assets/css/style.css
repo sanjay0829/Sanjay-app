@@ -1,0 +1,541 @@
+
+/*Import  fonts from fonts.css file*/
+
+@import url(./fonts.css);
+
+/* css Variables */
+@import url(./partials/_variables.css);
+
+/* import Global Style */
+@import url(./partials/_global.css);
+
+/* start navigation  */
+
+.header_area .main-menu .navbar .navbar-brand{
+    padding: 0 2rem 0 5rem;
+}
+
+.header_area .main-menu .navbar{
+    padding: 1rem 0rem;
+}
+
+.nav-link{
+    font: normal 500 15px/2px var(--roboto);
+    text-transform: uppercase;
+    padding: 1.7rem;
+    color: var(--title-color);
+}
+.navbar-nav{
+    margin-right: 2rem;;
+}
+
+.navbar-nav .active a{
+    background: var(--gradient-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.navbar-nav a:hover{
+    background: var(--gradient-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+/* End Navigation */
+
+/*  Banner Area */
+.site-main .site-banner{
+    background: url(../img/banner/home-banner.png) no-repeat 0% 50%;
+}
+
+.site-title h3{
+    padding-top: 30%;
+    font-weight: 500;
+}
+
+.site-title h3::after{
+    content: " ";
+    height: 2px;
+    width: 18vw;
+    background: black;
+    display: inline-block;
+    margin-left: 5%;
+    transform: translateY(-10px);
+}
+
+.site-title h1{
+    font-size: 5rem;
+}
+
+.site-title h4{
+    font-size: 1.5rem;
+}
+
+.banner-image>img{
+    padding: 7rem 0;
+    width: 90rem;
+}
+
+
+/* End Banner Area */
+
+/*  Start About Area */
+.about-area{
+    padding: 8rem 5rem;
+}
+
+.about-title h2>span{
+    display: block;
+    font:normal bold 49px/ 60px var(--roboto);
+    letter-spacing: 21px;
+}
+
+.paragraph>p{
+    padding: .4rem 0;
+}
+/* End About Area */
+
+/* Start Brand Area */
+
+.brand-area{
+    padding: 3% 4%;
+    margin-bottom: 4rem;
+}
+
+.brand-area .first-row .col-lg-4{
+    display: flex;
+    justify-content: center;
+}
+
+.brand-area .first-row .col-lg-4 > .single-brand{
+    border:1px solid var(--border-color);
+    text-align: center;
+    padding: 1.8rem 0rem;
+    margin:.9rem 0rem;
+    width:180px;
+    height: 100px;
+    cursor: pointer;
+    transition: transform .4s ease;
+}
+
+.brand-area .first-row .col-lg-4 > .single-brand > img{
+    width:60%;
+}
+
+.brand-area .first-row .col-lg-4 > .single-brand:hover{
+    box-shadow: var(--box-shadow);
+    transform: scale(1.1);
+}
+
+.brand-area .first-row .col-lg-4 > .single-brand > img:hover{
+    filter: brightness(0.15);
+}
+
+.experience-area{
+    padding-left: 1rem;
+}
+
+.experience-area span{
+    display: block;
+}
+
+.years-area{
+    background:url(../img/client-info-bg.png) no-repeat 45px 20px;
+    padding: 2rem 0;
+    width: 40rem;
+    height: 18rem;
+    padding-left: 8rem;
+    position: relative;
+}
+
+.bg-panel{
+    position: absolute;
+    left: -190px; top:0%;
+    background: #e029290a;
+    width:400px;
+    height: 400px;
+    margin-left: 340px;
+    z-index: -1;
+}
+
+.years-area .years{
+    font: normal bold 84px/40px var(--roboto);
+    color: var(--primary-color2);
+    z-index: 2;
+}
+
+.years-area h2>span{
+    font:normal 600 22px/30px var(--roboto);
+
+}
+.call-area{
+    padding-left: 10rem;
+}
+/* End Brand Area */
+
+/* Start Service Area */
+
+.services-area{
+    padding: 7rem 2rem;
+}
+
+.services-title{
+    padding: 0 14rem;
+}
+
+.services-title h1{
+    font-size: 35px;;
+}
+
+.services-area .services{
+    background: rgba(248, 252, 253, 0.9);
+    padding: 2rem 0;
+    width: 16rem;
+    margin: 5rem .5rem;
+    transition: box-shadow .7s ease;
+}
+
+.services:hover{
+    box-shadow: var(--box-shadow);
+}
+
+/* End service Area */
+
+/* Project Area */
+
+.project-area{
+    padding: 4rem 0;
+}
+
+.button-group button{
+    background: transparent;
+    border:none;
+    font: normal 500 16px/130px var(--roboto);
+    text-transform: uppercase;
+}
+
+.button-group button + button{
+    padding-left: 3rem;
+}
+
+.our-project> .title h4{
+    font:normal 700 25px/12px var(--roboto);
+}
+
+.grid .our-project .img a:hover img{
+    filter: brightness(1.1) drop-shadow(1px 8px 30px #b1afaf);
+}
+/* End Project Area */
+
+/* About Me */
+
+.about-title p{
+    padding:1rem 7rem;    
+}
+
+.about-area .client{
+    background: #ffffff10;
+    box-shadow: var(--box-shadow);
+    margin : 3rem 0rem;
+}
+
+.client .client-img{
+    padding:2rem;
+}
+
+.about-client{
+    padding-top:2rem;
+}
+
+.about-client h4{
+    font:normal 500 21px/20px var(--roboto);
+}
+
+.about-client p{
+    font-size: 14px;;
+}
+
+.owl-carousel .owl-item{
+    display: flex;
+    justify-content: center;
+    padding: 0 1.5rem;
+}
+
+.owl-carousel .owl-dots .owl-dot.active span{
+    background-color: var(--primary-color);
+    width: 12px;
+    height: 12px;
+}
+
+/*  End About Me */
+
+/*  Subscribe Me */
+
+.subscribe{
+    background: url(../img/subscribe-bg.png) no-repeat;
+    padding: 10rem 0;
+    margin: 3rem auto;
+}
+
+.subscribe-title h4{
+    font:normal 700 30px/30px var(--roboto);
+    color: whitesmoke;
+}
+
+.subscribe-title p{
+    color:whitesmoke;
+    padding:1rem 4rem;
+}
+
+.subscribe form .input-textbox input{
+    width:400px;
+    padding: 1.5rem 1rem;
+    border: 1px solid whitesmoke;
+    background: transparent;
+    color: white;
+    font: normal 500 17px/20px var(--roboto);
+}
+
+.input-textbox input::placeholder{
+    color: whitesmoke;
+}
+
+.btn-submit button{
+    background: whitesmoke;
+    color: #000;
+    padding: .7rem 2rem;
+}
+/* End Subscribe Me */
+
+/* Footer Area */
+
+.copyrights .para a>span{
+    color: var(--primary-color);
+}
+
+.footer-area{
+    padding: 5rem 0rem;
+    background: url(../img/footer-bg.png) no-repeat;
+}
+
+.social h5{
+    font: normal 500 23px/30px var(--roboto);
+}
+
+.social a>i{
+    font-size: 22px;
+    padding: 2rem;
+    color:var(--border-color);
+}
+
+.social a:hover>i{
+    color: var(--primary-color);
+}
+
+/* End Footer Area */
+
+/* Registration area */
+
+.registration-area{
+    padding-top: 2rem;
+}
+
+.registration-from{
+    padding: 1rem;
+    border:1px solid var(--border-color);
+    border-radius: 2px;   
+    box-shadow: var(--box-shadow);
+    filter: brightness(1.1);
+    background-color: #D6D6D6 ;
+}
+
+.show-hide-message{
+    animation: zoomIn 0.8s both ease;
+    margin: 1rem;
+    
+}
+
+.has-success, .has-error{
+    position: relative;
+}
+
+.has-success input{
+    border-color: green;
+}
+.has-error input{
+    border-color: red;
+    
+}
+
+.activaion-success{
+    color: green;
+    background-color: rgba(21, 235, 39, 0.1);
+    padding: 5px;
+}
+
+.activation-error{
+    color: red;
+    background-color: rgba(235, 35, 21, 0.1);
+    padding: 5px;
+}
+
+.activation-area{
+    margin-top: 2rem;
+    padding: 2rem;    
+    border-radius: 2px;   
+    box-shadow: var(--box-shadow);
+    filter: brightness(0.9);
+    background-image: linear-gradient(#f5f5ee, #e7e7ec);
+    animation: slideInLeft 1s both ease-in;
+
+}
+
+/* .has-success> p, ul,.has-error> p,ul{
+    position: absolute;
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    width: 90%;
+}  */
+
+/* End Registration Area */
+
+/* Login Area Start */
+.login-from{
+    margin-top: 2rem;
+    padding: 2rem;
+    border:1px solid var(--border-color);
+    border-radius: 2px;   
+    box-shadow: var(--box-shadow);
+    filter: brightness(0.9);
+    background-image: linear-gradient(#cce7ff, #80c3ff);
+    animation: slideInLeft 1s both ease-in;
+}
+
+.login-from form {
+    padding-top: 1rem;
+}
+.login-from .form-group label{
+    margin-left: 1rem;
+}
+/* Login Area End */
+
+/* Logout Area Start */
+
+.logout-area {
+    padding: 3rem;
+}
+
+.logout-title h1>i {
+    animation: slideOutRight 1s infinite ease-in;
+}
+
+.resetButtonsDiv{
+    float: right;
+}
+
+/* Logout Area End */
+
+/* Profile Area Start */
+
+.profile-area{
+    padding-top: 2rem;
+}
+
+.profile-detail{
+    margin-top: 2rem;
+    box-shadow: var(--box-shadow);
+}
+
+/* Profile Area End */
+
+/* Loding Animation */
+
+
+.dizzy-gillespie {
+  filter: saturate(3);
+  width: 0.1px;
+  height: 0.1px;
+  border: 40px solid transparent;
+  border-radius: 5px;
+  animation: loader 3s ease-in infinite, spin 1s linear infinite;
+  margin: auto;
+}
+.dizzy-gillespie::before {
+  filter: saturate(0.3);
+  display: block;
+  position: absolute;
+  z-index: -1;
+  margin-left: -40px;
+  margin-top: -40px;
+  content:'';
+  height:0.1;
+  width:0.1;
+  border: 40px solid transparent;
+  border-radius: 5px;
+  animation: loader 2s ease-in infinite reverse, spin 0.8s linear infinite reverse;
+}
+.dizzy-gillespie::after {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  margin-left: -10px;
+  margin-top: -10px;
+  content:'';
+  height:20px;
+  width:20px;
+  border-radius: 20px;
+  background-color: white;
+}
+@keyframes loader {
+  0% {border-bottom-color:transparent;border-top-color:#114357}
+  25% {border-left-color:transparent;border-right-color:#826C75}
+  50% {border-top-color:transparent;border-bottom-color:#F29492}
+  75% {border-right-color:transparent;border-left-color:#826C75}
+  100% {border-bottom-color:transparent;border-top-color:#114357}
+}
+@keyframes spin {
+  0% {transform: rotate(0deg)}
+  100% {transform: rotate(-360deg)}
+}
+
+/* End Loading Animation */
+
+/* User Management Area Start */
+.management-form{
+    margin-top: 1rem;
+    padding: 1rem;
+    border:1px solid var(--border-color);
+    border-radius: 2px;   
+    box-shadow: var(--box-shadow);
+    filter: brightness(0.9);
+    background-image: linear-gradient(#ffffff, #f3f5f7);
+    
+}
+.management-form .card{
+    height: 70vh;
+    overflow-y: auto;
+}
+
+/* User Management Area Ends */
+/* User Edit Area Start */
+.edit-form{
+    margin-top: 1rem;
+    padding: 1rem;
+    border:1px solid var(--border-color);
+    border-radius: 2px;   
+    box-shadow: var(--box-shadow);
+    filter: brightness(0.9);
+    background-image: linear-gradient(#ffffff, #f3f5f7);
+    
+}
+.edit-form .card{
+    overflow-y: auto;
+    background-color: rgba(144, 247, 221, 0.192);
+    box-shadow: var(--box-shadow);
+}
+
+.edit-form .card .form-group{
+    padding: 1rem;
+}
+/* User edit Area Ends */

@@ -1,0 +1,144 @@
+<!-- User edit Area -->
+<section class="edit-area">
+    <div class="container">
+        <div class="row">            
+            <div class="col-lg-8 col-md-12">              
+                
+                <div class="edit-form">
+                    <h4 class="text-uppercase">Edit User Details</h4>                  
+                      <br/>
+                    <div class="text-center" ng-show="edit.loading">
+                        <i class="fas fa-spinner"></i>
+                        <p>Loding.....</p>
+                    </div>
+                    <br>
+                    
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <ul class="nav nav-tabs">
+                                <li role="presentation" class="nav-item" ng-click="edit.namePhase()" ><a class="nav-link" ng-class="nameTab" href="#">Name</a></li>
+                                <li role="presentation" class="nav-item" ng-click="edit.usernamePhase()" ><a class="nav-link" ng-class="usernameTab" href="#">UserName</a></li>
+                                <li role="presentation" class="nav-item" ng-click="edit.emailPhase()" ><a class="nav-link" ng-class="emailTab" href="#">E-Mail</a></li>
+                                <li role="presentation" class="nav-item" ng-click="edit.permissionPhase()" ><a class="nav-link" ng-class="permissionTab" href="#">Permissions</a></li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                    <div class="row show-hide-message" ng-show="edit.errorMsg">
+                        <div class="alert alert-danger">{{ edit.errorMsg }}</div>
+                    </div>
+                    <div class="row show-hide-message" ng-show="edit.successMsg">
+                        <div class="alert alert-success">{{ edit.successMsg }}</div>
+                    </div>
+                    <br>
+                    <!-- Edit the name -->
+                    <form name="edit.nameForm" ng-show="edit.phase1" ng-submit="edit.updateName(newName, edit.nameForm.name.$valid)" novalidate>
+                        <div class="card">
+                            <div class="card-header bg-primary">
+                                <strong>Edit Name</strong> 
+                            </div>
+                            
+                            <div class="form-group" ng-class="{'has-success':(!edit.nameForm.name.$pristine && edit.nameForm.name.$valid), 'has-error':(!edit.nameForm.name.$pristine && !edit.nameForm.name.$valid)|| 
+                            (edit.nameForm.$submitted && !edit.nameForm.name.$valid)}">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" name="name" required placeholder="Enter Name" ng-model="newName"
+                                ng-pattern="/^[a-zA-Z\s]+$/" ng-minlength="3" ng-maxlength="30">
+                                <p class="text-muted" ng-show="(!edit.nameForm.name.$pristine && edit.nameForm.name.$error.required) || (edit.nameForm.$submitted && edit.nameForm.name.$error.required)">This field is required!!!</p>
+                                <ul class="text-muted" ng-show="(!edit.nameForm.name.$pristine && edit.nameForm.name.$error.pattern) || 
+                                (!edit.nameForm.name.$pristine && edit.nameForm.name.$error.minlength) || (!edit.nameForm.name.$pristine && edit.nameForm.name.$error.maxlength)">
+                                    <li>Must be all alphabets</li>
+                                    <li>Must not contain numbers or special characters</li>
+                                    <li>Must be between 3 to 30 charater</li>
+                                </ul>
+                                <br><br>
+                                <button ng-disabled="edit.disabled" type="submit" class="btn btn-primary">Update</button>
+                            </div>
+                                
+                        </div>
+                    </form>
+                    <!-- End of Edit name -->
+                    <!-- Edit the Email id -->
+                    <form name="edit.emailForm" ng-show="edit.phase2" ng-submit="edit.updateEmail(newEmail, edit.emailForm.email.$valid)" novalidate>
+                        <div class="card">
+                            <div class="card-header bg-primary">
+                                <strong>Edit Email</strong> 
+                            </div>
+                        
+                            <div class="form-group" ng-class="{'has-success':(!edit.emailForm.email.$pristine && edit.emailForm.email.$valid), 'has-error':(!edit.emailForm.email.$pristine && !edit.emailForm.email.$valid)|| 
+                            (edit.emailForm.$submitted && !edit.emailForm.email.$valid)}">
+                                <label for="exampleInputEmail1">Email address</label>
+                                <input type="text" class="form-control" name="email" required  placeholder="Enter email" ng-model="newEmail"
+                                ng-pattern="/^\w+[\w-\.]*\@\w+((-\w+)|(\w*))\.[a-z]{2,4}$/" ng-minlength="5" ng-maxlength="30" ng-blur="edit.checkEmail(newEmail)">
+                                <p class="text-muted" ng-show="(!edit.emailForm.email.$pristine && edit.emailForm.email.$error.required) || (edit.emailForm.$submitted && edit.emailForm.email.$error.required)">This field is required!!!</p>
+                                <p class="text-muted" ng-show="edit.emailMsg && !edit.emailForm.email.$error.required && edit.emailForm.email.$valid">{{edit.emailMsg}}</p>  
+                                <ul class="text-muted" ng-show="(!edit.emailForm.email.$pristine && edit.emailForm.email.$error.pattern) || 
+                                (!edit.emailForm.email.$pristine && edit.emailForm.email.$error.minlength) || (!edit.emailForm.email.$pristine && edit.emailForm.email.$error.maxlength)">
+                                    <li>Must conatin @ sign</li>
+                                    <li>Must enter valid Email Id</li>
+                                    <li>Must be between 5 to 30 charater</li>
+                                </ul>
+                                <br><br>
+                                <button ng-disabled="edit.disabled" type="submit" class="btn btn-primary">Update</button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- End of Edit emaik -->
+                    <!-- Edit the Email id -->
+                    <form name="edit.usernameForm" ng-show="edit.phase3" ng-submit="edit.updateUsername(newUsername, edit.usernameForm.username.$valid)" novalidate>
+                        <div class="card">
+                            <div class="card-header bg-primary">
+                                <strong>Edit Username</strong> 
+                            </div>
+                            <div class="form-group" ng-class="{'has-success':(!edit.usernameForm.username.$pristine && edit.usernameForm.username.$valid), 'has-error':(!edit.usernameForm.username.$pristine && !edit.usernameForm.username.$valid)|| 
+                            (edit.usernameForm.$submitted && !edit.usernameForm.username.$valid)}">
+                                <label for="exampleInputPassword1">Username</label>
+                                <input type="text" class="form-control" name="username" required placeholder="Enter User Name" ng-model="newUsername"
+                                ng-pattern="/^[a-z0-9_-]{3,16}$/" ng-minlength="3" ng-maxlength="30" ng-blur="edit.checkUsername(newUsername)">
+                                <p class="text-muted" ng-show="(!edit.usernameForm.username.$pristine && edit.usernameForm.username.$error.required) || (edit.usernameForm.$submitted && edit.usernameForm.username.$error.required)">This field is required!!!</p>
+                                <p class="text-muted" ng-show="edit.usernameMsg && !edit.usernameForm.username.$error.required && edit.usernameForm.username.$valid">{{edit.usernameMsg}}</p>
+                                <ul class="text-muted" ng-show="(!edit.usernameForm.username.$pristine && edit.usernameForm.username.$error.pattern) || 
+                                (!edit.usernameForm.username.$pristine && edit.usernameForm.username.$error.minlength) || (!edit.usernameForm.username.$pristine && edit.usernameForm.username.$error.maxlength)">
+                                    <li>Must be Alphanumeric</li>
+                                    <li>May contain _ or - sign</li>
+                                    <li>Must be between 3 to 30 charater</li>
+                                </ul>
+                                <br><br>
+                                <button ng-disabled="edit.disabled" type="submit" class="btn btn-primary">Update</button>
+                            </div>
+                            
+                        </div>
+                    </form>
+                    <!-- End of Edit Username -->
+                    <!-- Edit User Permissions -->
+                    <div ng-show="edit.phase4">
+                        <div class="card">
+                            <div class="card-header bg-primary">
+                                <strong>Edit Username</strong> 
+                            </div>
+                            <div class="p-2">
+                                <br>
+                                <span><h4>Current Permission: {{ newPermission }}</h4></span>
+                                <br>
+                                <button ng-disabled="edit.disableUser" ng-click="edit.updatePermissions('user')" type="button" class="btn btn-success">User</button>
+                                <button ng-disabled="edit.disableModerator" ng-click="edit.updatePermissions('moderator')" type="button" class="btn btn-info">Moderator</button>
+                                <button ng-disabled="edit.disableAdmin" ng-click="edit.updatePermissions('admin')" type="button" class="btn btn-warning">Admin</button>
+                                
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <!-- End of Edit User Permissions -->
+                    
+                   
+                    
+                   
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <img src="assets/img/login.png" alt="Registration" class="img-fluid">
+                
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End User Registration Area -->
